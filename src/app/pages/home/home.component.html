@@ -1,0 +1,53 @@
+<div class="cont-info">
+  <div class="container">
+    <div class="title-box">
+      <h2>Base de Calculo</h2>
+      <i class="material-icons">
+        {{ icon }}
+      </i>
+    </div>
+    <div class="base-main">
+      <mat-form-field class="example-full-width">
+      <input type="number" matInput name="fixo" [(ngModel)]="valores.gFixo" placeholder="Valor Fixo">
+    </mat-form-field>
+    <div class="adc">
+      <mat-form-field class="example-full-width">
+          <input type="number" matInput name="gAdc" [(ngModel)]="valores.gAdc" placeholder="Valor Adicional">
+        </mat-form-field>
+        <button (click)="add()">
+            <i class="material-icons">add</i>
+        </button>
+    </div>
+  
+    <mat-form-field class="example-full-width">
+      <input type="number" matInput name="vInv" [(ngModel)]="valores.vInv" placeholder="Investimento">
+    </mat-form-field>
+  
+    </div>
+  </div>
+</div>
+
+<form class="example-form">
+
+  <mat-form-field class="example-full-width">
+    <input type="number" matInput name="salario" value="4000" [(ngModel)]="salario" placeholder="Salario">
+  </mat-form-field>
+
+  <button mat-button (click)="calcular()" color="black">Consultar</button>
+    
+</form>
+
+
+<div class="cont-info">
+  <div class="container">
+    <div class="title-box">
+      <h2>Salario: <span> R$ {{ salario }} </span></h2>
+    </div>
+    <div class="none">
+      <div class="details-box">
+        <div> <p *ngFor="let table of tables"> {{ table.title }} </p> </div>
+        <div> <p *ngFor="let tableN of tablesNumber"> R$: {{ tableN.value }} </p> </div>
+      </div>
+    </div>
+  </div>
+</div>
